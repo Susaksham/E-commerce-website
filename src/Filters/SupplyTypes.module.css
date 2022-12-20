@@ -1,0 +1,14 @@
+.supply__types form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.supply__types {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.supply__types input[type='checkbox'] {
+  border: 5px orange solid;
+}

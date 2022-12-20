@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  padding: 0.5rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px #3333 solid;
+}
+.navigation {
+  display: flex;
+  gap: 3rem;
+}

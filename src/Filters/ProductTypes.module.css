@@ -1,0 +1,10 @@
+.product__types form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.product__types {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}

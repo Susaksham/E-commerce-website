@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  width: 20rem;
+  height: 40rem;
+
+  padding: 2rem 3rem 2rem 2rem;
+  gap: 1.2rem;
+  margin-left: 2rem;
+  margin-top: 1.5rem;
+  border-radius: 10px;
+  border: 2px solid #3333;
+}
+.container ul {
+  list-style: none;
+}
+.types__description {
+  padding-left: 2.5rem;
+}
+
+.container input {
+  margin-right: 0.7rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}

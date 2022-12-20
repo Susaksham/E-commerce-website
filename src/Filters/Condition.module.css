@@ -1,0 +1,10 @@
+.condition form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.condition {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
