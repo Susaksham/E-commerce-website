@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  overflow-x: hidden;
+  padding: 0;
+  min-height: 100vh;
 }
 
 code {
@@ -15,4 +19,5 @@ code {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-size: 62.5%;
 }

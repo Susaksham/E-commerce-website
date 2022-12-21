@@ -1,0 +1,15 @@
+.wrapper {
+  width: 110rem;
+
+  height: 60rem;
+
+  border-radius: 10px;
+  border: 2px solid #3333;
+  font-size: 1.6rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  padding: 2rem;
+}

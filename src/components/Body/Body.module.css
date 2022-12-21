@@ -1,0 +1,10 @@
+.wrapper {
+  width: 100vw;
+  display: flex;
+  gap: 4.8rem;
+  justify-content: start;
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
+  padding-top: 2.4rem;
+  overflow: hidden !important;
+}

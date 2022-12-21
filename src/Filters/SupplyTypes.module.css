@@ -12,3 +12,6 @@
 .supply__types input[type='checkbox'] {
   border: 5px orange solid;
 }
+.supply__types label {
+  font-size: 1.6rem;
+}

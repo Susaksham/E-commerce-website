@@ -8,3 +8,6 @@
   flex-direction: column;
   gap: 0.6rem;
 }
+.condition label {
+  font-size: 1.6rem;
+}

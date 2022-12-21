@@ -3,7 +3,7 @@ import classes from './SecondBelt.module.css'
 function SecondBelt() {
   return (
     <div className={classes.wrapper}>
-      <div style={{ display: 'flex', gap: '0.7rem', alignItems: 'center' }}>
+      <div style={{ display: 'flex', gap: '1.12rem', alignItems: 'center' }}>
         <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
           <path
             fill="currentColor"

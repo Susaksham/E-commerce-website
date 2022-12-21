@@ -1,6 +1,26 @@
 import React from 'react'
 import classes from './SupplyTypes.module.css'
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { filterAction } from '../store/filter'
 function SupplyTypes() {
+  const trade = useSelector((state) => {
+    return state.filters.filters.tradeAssurance
+  })
+
+  const dispatch = useDispatch()
+  const tradeHandler = () => {
+    dispatch(filterAction.change({ type: 'tradeAssurance' }))
+  }
+
+  const verifiedSuppliers = useSelector((state) => {
+    return state.filters.filters.verifiedSuppliers
+  })
+
+  const verifiedSuppliersHandler = () => {
+    console.log(verifiedSuppliers)
+    dispatch(filterAction.change({ type: 'verifiedSuppliers' }))
+  }
   return (
     <div className={classes.supply__types}>
       <h2>Suppliers Types</h2>
@@ -10,7 +30,13 @@ function SupplyTypes() {
         // style={{ display: 'flex', alignItems: 'center' }}
       >
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <input type="checkbox" id="trade" name="samples" value="sample" />
+          <input
+            type="checkbox"
+            id="trade"
+            name="samples"
+            value="sample"
+            onChange={tradeHandler}
+          />
           <svg
             viewBox="0 0 24 24"
             width="25"
@@ -33,7 +59,13 @@ function SupplyTypes() {
           </label>
         </div>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <input type="checkbox" id="verified" name="samples" value="sample" />
+          <input
+            type="checkbox"
+            id="verified"
+            name="samples"
+            value="sample"
+            onChange={verifiedSuppliersHandler}
+          />
           <svg width="20" height="20" viewBox="0 0 24 24">
             <path
               fill="orange"
