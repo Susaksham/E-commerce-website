@@ -8,6 +8,7 @@ const initialState = {
     newStuff: false,
     secondStuff: false,
   },
+  filteredIcons: [],
   data: [
     {
       id: '0',
@@ -89,6 +90,7 @@ const filter = createSlice({
         state.filters.tradeAssurance = !state.filters.tradeAssurance
       } else if (obj.type === 'verifiedSuppliers') {
         console.log('inside verified')
+
         state.filters.verifiedSuppliers = !state.filters.verifiedSuppliers
       } else if (obj.type === 'readyToShip') {
         state.filters.readyToShip = !state.filters.readyToShip
@@ -98,6 +100,38 @@ const filter = createSlice({
         state.filters.newStuff = !state.filters.newStuff
       } else if (obj.type === 'secondStuff') {
         state.filters.secondStuff = !state.filters.secondStuff
+      }
+    },
+    add(state, action) {
+      const obj = { ...action.payload }
+      console.log(obj)
+      if (obj.type === 'tradeAssurance') {
+        state.filteredIcons.push({ icon: 'tradeAssurance', id: 1 })
+      } else if (obj.type === 'verifiedSuppliers') {
+        console.log('inside verified')
+
+        state.filteredIcons.push({ icon: 'verifiedSuppliers', id: 2 })
+      } else if (obj.type === 'readyToShip') {
+        state.filteredIcons.push({ icon: 'readyToShip', id: 3 })
+      } else if (obj.type === 'paidSamples') {
+        state.filteredIcons.push({ icon: 'paidSamples', id: 4 })
+      } else if (obj.type === 'newStuff') {
+        state.filteredIcons.push({ icon: 'newStuff', id: 5 })
+      } else if (obj.type === 'secondStuff') {
+        state.filteredIcons.push({ icon: 'secondStuff', id: 6 })
+      }
+    },
+    remove(state, action) {
+      const obj = { ...action.payload }
+      console.log('removeHandler ' + obj)
+      state.filteredIcons = state.filteredIcons.filter((elem) => {
+        return elem.icon !== obj.type
+      })
+    },
+    clear(state, action) {
+      state.filteredIcons = []
+      for (const element in state.filters) {
+        state.filters[element] = false
       }
     },
   },

@@ -12,6 +12,26 @@
 .supply__types input[type='checkbox'] {
   border: 5px orange solid;
 }
+/* .input[type='checkbox'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; */
+/* create custom checkbox appearance */
+/* display: inline-block; */
+
+/* background-color only for content */
+/* background-clip: content-box;
+  border: 1.5px solid #bbbbbb;
+  border-radius: 3px;
+}
+.input[type='checkbox']:checked {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.input[type='checkbox'] :focus {
+  outline: none !important;
+} */
 .supply__types label {
   font-size: 1.6rem;
 }

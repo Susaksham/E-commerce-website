@@ -23,7 +23,9 @@ function NavigationBelt() {
             type="text"
             placeholder={'Search and hit enter'}
           ></input>
-          <button type="submit">Search</button>
+          <button className={classes.submit} type="submit">
+            Search
+          </button>
         </form>
         <div className={classes.icons_container}>
           <div className={classes.cart}>

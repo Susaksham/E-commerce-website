@@ -10,6 +10,12 @@ function Condition() {
   const dispatch = useDispatch()
   const newStuffHandler = () => {
     dispatch(filterAction.change({ type: 'newStuff' }))
+    if (!newStuff) {
+      dispatch(filterAction.add({ type: 'newStuff' }))
+    }
+    if (newStuff) {
+      dispatch(filterAction.remove({ type: 'newStuff' }))
+    }
   }
   const secondStuff = useSelector((state) => {
     return state.filters.filters.secondStuff
@@ -17,6 +23,12 @@ function Condition() {
 
   const secondStuffHandler = () => {
     dispatch(filterAction.change({ type: 'secondStuff' }))
+    if (!secondStuff) {
+      dispatch(filterAction.add({ type: 'secondStuff' }))
+    }
+    if (secondStuff) {
+      dispatch(filterAction.remove({ type: 'secondStuff' }))
+    }
   }
   return (
     <div className={classes.condition}>
@@ -29,6 +41,7 @@ function Condition() {
             name="newStuff"
             value="newStuff"
             onChange={newStuffHandler}
+            checked={newStuff}
           />
           <label htmlFor="newStuff">New Stuff</label>
         </div>
@@ -39,6 +52,7 @@ function Condition() {
             name="secondStuff"
             value="secondStuff"
             onChange={secondStuffHandler}
+            checked={secondStuff}
           />
           <label htmlFor="secondStuff">Second stuff</label>
         </div>

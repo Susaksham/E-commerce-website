@@ -7,15 +7,27 @@ function ProductTypes() {
     return state.filters.filters.readyToShip
   })
   const paidSamples = useSelector((state) => {
-    return state.filters.filters.readyToShip
+    return state.filters.filters.paidSamples
   })
 
   const dispatch = useDispatch()
   const readyToShipHandler = () => {
     dispatch(filterAction.change({ type: 'readyToShip' }))
+    if (!readyToShip) {
+      dispatch(filterAction.add({ type: 'readyToShip' }))
+    }
+    if (readyToShip) {
+      dispatch(filterAction.remove({ type: 'readyToShip' }))
+    }
   }
   const paidSamplesHandler = () => {
     dispatch(filterAction.change({ type: 'paidSamples' }))
+    if (!paidSamples) {
+      dispatch(filterAction.add({ type: 'paidSamples' }))
+    }
+    if (paidSamples) {
+      dispatch(filterAction.remove({ type: 'paidSamples' }))
+    }
   }
   return (
     <div className={classes.product__types}>
@@ -28,6 +40,7 @@ function ProductTypes() {
             name="readyToShop"
             value="ready"
             onChange={readyToShipHandler}
+            checked={readyToShip}
           />
           <label htmlFor="readyToShop">Ready to Shop</label>
         </div>
@@ -39,6 +52,7 @@ function ProductTypes() {
             name="samples"
             value="sample"
             onChange={paidSamplesHandler}
+            checked={paidSamples}
           />
           <label htmlFor="samples"> Paid Samples</label>
         </div>

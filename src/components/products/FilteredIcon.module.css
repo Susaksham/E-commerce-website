@@ -1,0 +1,12 @@
+.wrapper {
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 1rem;
+  cursor: pointer;
+}
+.wrapper p {
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
