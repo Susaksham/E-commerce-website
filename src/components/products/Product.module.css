@@ -28,4 +28,29 @@
 .bottom {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  padding: 0rem 2rem;
+}
+.star {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: orange;
+  padding: 0rem 1rem;
+  border-radius: 20px;
+  gap: 0.5rem;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1rem;
+  font-size: 1.6rem;
+  color: #fff;
+}
+.cart {
+  padding: 0.8rem 1rem;
+  border-radius: 50%;
+  background-color: #fb6a00;
 }

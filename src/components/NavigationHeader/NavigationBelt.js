@@ -4,19 +4,20 @@ import CartIcon from '../../UI/CartIcon'
 import Person from '../../UI/Person'
 import SearchIcon from '../../UI/SearchIcon'
 import SecondBelt from './SecondBelt'
-function NavigationBelt() {
+function NavigationBelt(props) {
   const searchRef = useRef('')
   const submitHandler = (e) => {
     e.preventDefault()
     console.log(searchRef.current.value)
   }
+  console.log(props.onCartHandler)
   return (
     <>
       <header className={classes.header}>
         <h1>logo</h1>
         <form className={classes.search} onSubmit={submitHandler}>
           <div className={classes.searchIcon}>
-            <SearchIcon></SearchIcon>
+            <SearchIcon color={`black`} size="32"></SearchIcon>
           </div>
           <input
             ref={searchRef}
@@ -24,6 +25,7 @@ function NavigationBelt() {
             placeholder={'Search and hit enter'}
           ></input>
           <button className={classes.submit} type="submit">
+            <SearchIcon color="white" size="24px"></SearchIcon>
             Search
           </button>
         </form>
@@ -32,7 +34,7 @@ function NavigationBelt() {
             <Person></Person>
           </div>
           <div className={classes.cart}>
-            <CartIcon></CartIcon>
+            <CartIcon onClick={props.onCartHandler}></CartIcon>
           </div>
         </div>
       </header>

@@ -51,6 +51,7 @@ function SupplyTypes() {
             checked={trade}
             className={classes.input}
           />
+
           <svg
             viewBox="0 0 24 24"
             width="25"

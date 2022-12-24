@@ -37,7 +37,7 @@
 }
 
 .search button {
-  padding: 1.33rem 3.2rem;
+  padding: 0.5rem 2.2rem;
   border: 2px rgb(15, 15, 15) solid;
   font-size: 1.6rem;
   /* border-top-right-radius: 30px;
@@ -48,11 +48,12 @@
   border-left: 2px rgba(12, 12, 12, 0.516) solid;
   background-color: #fb6a00;
   color: #fff;
+  display: flex;
+  align-items: center;
 }
 .cart {
   padding: 1.28rem 1.6rem;
   border-radius: 100%;
-  background-color: #ccccf3;
 }
 .icons_container {
   display: flex;

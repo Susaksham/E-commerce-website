@@ -8,11 +8,21 @@ const initialState = {
     newStuff: false,
     secondStuff: false,
   },
+  totalFilters: 0,
   filteredIcons: [],
   data: [
     {
       id: '0',
       productName: 'Huawei MateBook X Pro',
+      filters: {
+        tradeAssurance: true,
+        verifiedSuppliers: false,
+        readyToShip: true,
+        paidSamples: true,
+        newStuff: false,
+        secondStuff: false,
+      },
+      star: 3.0,
       image:
         'https://media.istockphoto.com/id/479520746/photo/laptop-with-blank-screen-on-white.jpg?s=612x612&w=0&k=20&c=V5dj0ayS8He0BP4x15WR5t5NKYzWTKv7VdWvD2SAVAM=',
       cpu: 'Intel Core i7, 8th generation',
@@ -26,6 +36,15 @@ const initialState = {
     {
       id: '1',
       productName: 'Apple Macbook Pro 2018',
+      filters: {
+        tradeAssurance: true,
+        verifiedSuppliers: true,
+        readyToShip: false,
+        paidSamples: false,
+        newStuff: true,
+        secondStuff: false,
+      },
+      star: 4.0,
       image:
         'https://media.istockphoto.com/id/479520746/photo/laptop-with-blank-screen-on-white.jpg?s=612x612&w=0&k=20&c=V5dj0ayS8He0BP4x15WR5t5NKYzWTKv7VdWvD2SAVAM=',
       cpu: '6-core Intel i7, 8th generation',
@@ -39,19 +58,37 @@ const initialState = {
     {
       id: '2',
       productName: 'Dell XPS 13',
+      filters: {
+        tradeAssurance: false,
+        verifiedSuppliers: true,
+        readyToShip: false,
+        paidSamples: true,
+        newStuff: false,
+        secondStuff: false,
+      },
+      star: 5.0,
       image:
         'https://media.istockphoto.com/id/479520746/photo/laptop-with-blank-screen-on-white.jpg?s=612x612&w=0&k=20&c=V5dj0ayS8He0BP4x15WR5t5NKYzWTKv7VdWvD2SAVAM=',
       cpu: 'Intel Core i7, 8th generation',
       ram: '16GB',
       storage: '512 GB SSD',
       screen: '13.3-inch, Full HD',
-      price: '1199',
+      price: '1299',
       description:
         'The Dell XPS 13 is an absolutely brilliant laptop. The 2018 version rocks an 8th-generation Intel Core i5 or i7 processor and a bezel-less ‘Infinity Edge’ display, this Dell XPS 13 continues to be the most popular Windows laptop in the world. What’s more, there’s a wide range of customization options, so you can really make the Dell XPS 13 the best laptop for your needs. ',
     },
     {
       id: '3',
       productName: 'Asus ZenBook Flip S',
+      filters: {
+        tradeAssurance: false,
+        verifiedSuppliers: false,
+        readyToShip: false,
+        paidSamples: false,
+        newStuff: false,
+        secondStuff: false,
+      },
+      star: 1.0,
       image:
         'https://media.istockphoto.com/id/479520746/photo/laptop-with-blank-screen-on-white.jpg?s=612x612&w=0&k=20&c=V5dj0ayS8He0BP4x15WR5t5NKYzWTKv7VdWvD2SAVAM=',
       cpu: 'Intel Core i7, 8th generation',
@@ -65,6 +102,15 @@ const initialState = {
     {
       id: '4',
       productName: 'Samsung Notebook 9',
+      filters: {
+        tradeAssurance: true,
+        verifiedSuppliers: true,
+        readyToShip: false,
+        paidSamples: true,
+        newStuff: false,
+        secondStuff: true,
+      },
+      star: 5.0,
       image:
         'https://media.istockphoto.com/id/479520746/photo/laptop-with-blank-screen-on-white.jpg?s=612x612&w=0&k=20&c=V5dj0ayS8He0BP4x15WR5t5NKYzWTKv7VdWvD2SAVAM=',
       cpu: 'Intel Core i7, 8th generation',
@@ -87,29 +133,56 @@ const filter = createSlice({
       const obj = { ...action.payload }
       console.log(obj)
       if (obj.type === 'tradeAssurance') {
+        if (state.filters.tradeAssurance === true) {
+          state.totalFilters = state.totalFilters - 1
+        } else {
+          state.totalFilters = state.totalFilters + 1
+        }
         state.filters.tradeAssurance = !state.filters.tradeAssurance
       } else if (obj.type === 'verifiedSuppliers') {
-        console.log('inside verified')
+        if (state.filters.verifiedSuppliers === true) {
+          state.totalFilters = state.totalFilters - 1
+        } else {
+          state.totalFilters = state.totalFilters + 1
+        }
 
         state.filters.verifiedSuppliers = !state.filters.verifiedSuppliers
       } else if (obj.type === 'readyToShip') {
+        if (state.filters.readyToShip === true) {
+          state.totalFilters = state.totalFilters - 1
+        } else {
+          state.totalFilters = state.totalFilters + 1
+        }
         state.filters.readyToShip = !state.filters.readyToShip
       } else if (obj.type === 'paidSamples') {
+        if (state.filters.paidSamples === true) {
+          state.totalFilters = state.totalFilters - 1
+        } else {
+          state.totalFilters = state.totalFilters + 1
+        }
         state.filters.paidSamples = !state.filters.paidSamples
       } else if (obj.type === 'newStuff') {
+        if (state.filters.newStuff === true) {
+          state.totalFilters = state.totalFilters - 1
+        } else {
+          state.totalFilters = state.totalFilters + 1
+        }
         state.filters.newStuff = !state.filters.newStuff
       } else if (obj.type === 'secondStuff') {
+        if (state.filters.secondStuff === true) {
+          state.totalFilters = state.totalFilters - 1
+        } else {
+          state.totalFilters = state.totalFilters + 1
+        }
         state.filters.secondStuff = !state.filters.secondStuff
       }
     },
     add(state, action) {
       const obj = { ...action.payload }
-      console.log(obj)
+
       if (obj.type === 'tradeAssurance') {
         state.filteredIcons.push({ icon: 'tradeAssurance', id: 1 })
       } else if (obj.type === 'verifiedSuppliers') {
-        console.log('inside verified')
-
         state.filteredIcons.push({ icon: 'verifiedSuppliers', id: 2 })
       } else if (obj.type === 'readyToShip') {
         state.filteredIcons.push({ icon: 'readyToShip', id: 3 })
@@ -123,7 +196,7 @@ const filter = createSlice({
     },
     remove(state, action) {
       const obj = { ...action.payload }
-      console.log('removeHandler ' + obj)
+
       state.filteredIcons = state.filteredIcons.filter((elem) => {
         return elem.icon !== obj.type
       })
@@ -133,6 +206,7 @@ const filter = createSlice({
       for (const element in state.filters) {
         state.filters[element] = false
       }
+      state.totalFilters = 0
     },
   },
 })

@@ -12,7 +12,7 @@
 .container {
   width: 100%;
   border-radius: 10px;
-  border: 2px solid #3333;
+  /* border: 2px solid #3333; */
   font-size: 1.6rem;
   display: flex;
   gap: 2rem;

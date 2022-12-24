@@ -1,12 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NavigationBelt from '../components/NavigationHeader/NavigationBelt'
 import FiltersComponent from '../Filters/FiltersComponent'
 import Body from '../components/Body/Body'
+import Modal from '../UI/Modal'
+
 function Home() {
+  const [displayCart, setDisplayCart] = useState(true)
+
+  const cartHandler = () => {
+    setDisplayCart(true)
+  }
+  const removeCartHandler = () => {
+    setDisplayCart(false)
+  }
   return (
     <div>
-      <NavigationBelt></NavigationBelt>
+      <NavigationBelt onCartHandler={cartHandler}></NavigationBelt>
       <Body></Body>
+      {displayCart && <Modal removeCart={removeCartHandler}></Modal>}
     </div>
   )
 }
