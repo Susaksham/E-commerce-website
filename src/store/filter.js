@@ -10,6 +10,7 @@ const initialState = {
   },
   totalFilters: 0,
   filteredIcons: [],
+  cart: [],
   data: [
     {
       id: '0',
@@ -38,10 +39,10 @@ const initialState = {
       productName: 'Apple Macbook Pro 2018',
       filters: {
         tradeAssurance: true,
-        verifiedSuppliers: true,
+        verifiedSuppliers: false,
         readyToShip: false,
         paidSamples: false,
-        newStuff: true,
+        newStuff: false,
         secondStuff: false,
       },
       star: 4.0,
@@ -207,6 +208,32 @@ const filter = createSlice({
         state.filters[element] = false
       }
       state.totalFilters = 0
+    },
+    addToCart(state, action) {
+      const productObj = { ...action.payload }
+      console.log(productObj)
+      const indexOfProduct = state.cart.findIndex((element) => {
+        return productObj.id === element.id
+      })
+      console.log('index of ' + indexOfProduct)
+      if (indexOfProduct < 0) {
+        state.cart.push({ ...productObj, items: 1 })
+      } else if (indexOfProduct >= 0) {
+        state.cart[indexOfProduct].items++
+      }
+    },
+    removeFromCart(state, action) {
+      const id = action.payload
+      const indexOfProduct = state.cart.findIndex((element) => {
+        return id === element.id
+      })
+      if (state.cart[indexOfProduct].items === 1) {
+        state.cart = state.cart.filter((element) => {
+          return element.id !== id
+        })
+      } else if (state.cart[indexOfProduct].items > 1) {
+        state.cart[indexOfProduct].items--
+      }
     },
   },
 })

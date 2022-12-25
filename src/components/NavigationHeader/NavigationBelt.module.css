@@ -3,7 +3,7 @@
   align-items: center;
   width: 100%;
   justify-content: space-between;
-  padding: 0.8rem 3.2rem 1.6rem;
+  padding: 0.8rem 4rem 1.6rem 3.2rem;
   border: 2px #3333 solid;
 }
 .header h1 {
@@ -54,8 +54,19 @@
 .cart {
   padding: 1.28rem 1.6rem;
   border-radius: 100%;
+  position: relative;
 }
 .icons_container {
   display: flex;
   gap: 3.2rem;
+}
+.cartItems {
+  font-size: 1.2rem;
+  position: absolute;
+  top: -10%;
+  padding: 0.5rem 1rem 1rem 1rem;
+  border-radius: 50%;
+  color: white;
+  background-color: orange;
+  right: 0;
 }

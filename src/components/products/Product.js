@@ -1,6 +1,19 @@
 import React from 'react'
 import classes from './Product.module.css'
+import { useDispatch } from 'react-redux'
+import { filterAction } from '../../store/filter'
 function Product(props) {
+  const dispatch = useDispatch()
+  const addItemHandler = () => {
+    dispatch(
+      filterAction.addToCart({
+        id: props.id,
+        productName: props.productName,
+        price: props.price,
+        description: props.description,
+      }),
+    )
+  }
   return (
     <div className={classes.wrapper}>
       <div>
@@ -25,7 +38,7 @@ function Product(props) {
           </svg>
           <div className={classes.rating}>{props.star.toFixed(1)}</div>
         </div>
-        <div className={classes.cart}>
+        <div onClick={addItemHandler} className={classes.cart}>
           <svg width="24px" height="24px" viewBox="0 0 24 24">
             <path
               fill="#ffff"

@@ -1,0 +1,15 @@
+.wrapper {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper p {
+  font-size: 1.6rem;
+  color: white;
+}
+.wrapper button {
+  padding: 0.5rem 2rem;
+  font-size: 1.6rem;
+}

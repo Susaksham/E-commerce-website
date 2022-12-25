@@ -4,13 +4,20 @@ import CartIcon from '../../UI/CartIcon'
 import Person from '../../UI/Person'
 import SearchIcon from '../../UI/SearchIcon'
 import SecondBelt from './SecondBelt'
+import { useSelector } from 'react-redux'
 function NavigationBelt(props) {
+  const cart = useSelector((state) => {
+    return state.filters.cart
+  })
   const searchRef = useRef('')
   const submitHandler = (e) => {
     e.preventDefault()
     console.log(searchRef.current.value)
   }
-  console.log(props.onCartHandler)
+  const items = cart.reduce((accumadate, current) => {
+    accumadate = accumadate + current.items
+    return accumadate
+  }, 0)
   return (
     <>
       <header className={classes.header}>
@@ -35,6 +42,7 @@ function NavigationBelt(props) {
           </div>
           <div className={classes.cart}>
             <CartIcon onClick={props.onCartHandler}></CartIcon>
+            <span className={classes.cartItems}>{items}</span>
           </div>
         </div>
       </header>

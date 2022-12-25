@@ -5,7 +5,7 @@ import Body from '../components/Body/Body'
 import Modal from '../UI/Modal'
 
 function Home() {
-  const [displayCart, setDisplayCart] = useState(true)
+  const [displayCart, setDisplayCart] = useState(false)
 
   const cartHandler = () => {
     setDisplayCart(true)
