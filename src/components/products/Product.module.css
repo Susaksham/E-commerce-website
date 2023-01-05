@@ -6,12 +6,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
   gap: 1rem;
 }
 .image {
   width: 20rem;
   height: 15rem;
-  object-fit: cover;
+  object-fit: contain;
 }
 .wrapper h3 {
   font-size: 2rem;

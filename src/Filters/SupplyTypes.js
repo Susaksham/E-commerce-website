@@ -51,6 +51,7 @@ function SupplyTypes() {
             checked={trade}
             className={classes.input}
           />
+          <label></label>
 
           <svg
             viewBox="0 0 24 24"
@@ -81,6 +82,7 @@ function SupplyTypes() {
             value="sample"
             onChange={verifiedSuppliersHandler}
             checked={verifiedSuppliers}
+            className={classes.input}
           />
           <svg width="20" height="20" viewBox="0 0 24 24">
             <path

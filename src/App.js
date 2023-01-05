@@ -5,6 +5,7 @@ import ErrorPage from './components/Error/ErrorPage'
 import Home from './pages/Home'
 import { Provider } from 'react-redux'
 import store from './store/renders'
+
 function App() {
   return (
     <>

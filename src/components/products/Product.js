@@ -8,7 +8,7 @@ function Product(props) {
     dispatch(
       filterAction.addToCart({
         id: props.id,
-        productName: props.productName,
+        title: props.productName,
         price: props.price,
         description: props.description,
       }),
@@ -16,7 +16,7 @@ function Product(props) {
   }
   return (
     <div className={classes.wrapper}>
-      <div>
+      <div className={classes.image}>
         <img
           src={props.image}
           className={classes.image}
@@ -24,10 +24,8 @@ function Product(props) {
         ></img>
       </div>
       <h3>${props.price}</h3>
-      <p>{props.productName}</p>
-      <p>
-        {props.cpu}, {props.screen}
-      </p>
+      <p>{props.productName.substring(0, 50)}</p>
+
       <div className={classes.bottom}>
         <div className={classes.star}>
           <svg width="24px" height="24px" viewBox="0 0 24 24">

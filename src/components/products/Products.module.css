@@ -8,6 +8,7 @@
   border-radius: 10px;
   gap: 2rem;
   padding: 2rem;
+  position: relative;
 }
 .container {
   width: 100%;

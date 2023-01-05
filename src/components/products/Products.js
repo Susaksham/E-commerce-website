@@ -3,6 +3,8 @@ import classes from './Products.module.css'
 import { useSelector } from 'react-redux'
 import Product from './Product'
 import FilteredIcons from './FilteredIcons'
+
+import Loader from '../../UI/Loader/Loader'
 function Products() {
   let filteredData = []
   const data = useSelector((state) => {
@@ -40,12 +42,16 @@ function Products() {
       return true
     })
   }
-
+  const loading = useSelector((state) => {
+    return state.filters.loading
+  })
+  console.log(loading)
   console.log(data)
   return (
     <div className={classes.wrapper}>
       <FilteredIcons></FilteredIcons>
       <div className={classes.container}>
+        {loading && <Loader></Loader>}
         {totalFilters === 0 &&
           data.map((product) => {
             console.log(product.star)
@@ -53,13 +59,13 @@ function Products() {
               <Product
                 key={product.id}
                 id={product.id}
-                productName={product.productName}
+                productName={product.title}
                 price={product.price}
                 image={product.image}
                 description={product.description}
                 cpu={product.cpu}
                 screen={product.screen}
-                star={product.star}
+                star={product.rating.rate}
               ></Product>
             )
           })}
@@ -69,13 +75,13 @@ function Products() {
               <Product
                 key={product.id}
                 id={product.id}
-                productName={product.productName}
+                productName={product.title}
                 price={product.price}
                 image={product.image}
                 description={product.description}
                 cpu={product.cpu}
                 screen={product.screen}
-                star={product.star}
+                star={product.rating.rate}
               ></Product>
             )
           })}

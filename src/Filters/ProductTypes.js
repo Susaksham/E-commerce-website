@@ -41,6 +41,7 @@ function ProductTypes() {
             value="ready"
             onChange={readyToShipHandler}
             checked={readyToShip}
+            className={classes.input}
           />
           <label htmlFor="readyToShop">Ready to Shop</label>
         </div>
@@ -53,6 +54,7 @@ function ProductTypes() {
             value="sample"
             onChange={paidSamplesHandler}
             checked={paidSamples}
+            className={classes.input}
           />
           <label htmlFor="samples"> Paid Samples</label>
         </div>

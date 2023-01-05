@@ -25,7 +25,7 @@ function CartItems(props) {
             description={element.description}
             items={element.items}
             key={element.id}
-            productName={element.productName}
+            productName={element.title}
           ></CartItem>
         )
       })}

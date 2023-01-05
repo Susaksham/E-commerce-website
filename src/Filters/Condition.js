@@ -42,6 +42,7 @@ function Condition() {
             value="newStuff"
             onChange={newStuffHandler}
             checked={newStuff}
+            className={classes.input}
           />
           <label htmlFor="newStuff">New Stuff</label>
         </div>
@@ -53,6 +54,7 @@ function Condition() {
             value="secondStuff"
             onChange={secondStuffHandler}
             checked={secondStuff}
+            className={classes.input}
           />
           <label htmlFor="secondStuff">Second stuff</label>
         </div>
