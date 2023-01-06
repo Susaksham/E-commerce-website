@@ -15,7 +15,7 @@ const dataCreator = () => {
             ...product,
             filters: {
               tradeAssurance: Math.random() - 0.2 >= 0 ? true : false,
-              verifiedSuppliers: Math.random() - 0.2 >= 0 ? true : false,
+              verifiedSuppliers: Math.random() - 0.3 >= 0 ? true : false,
               readyToShip: Math.random() - 0.5 >= 0 ? true : false,
               paidSamples: Math.random() - 0.8 >= 0 ? true : false,
               newStuff: Math.random() - 0.5 >= 0 ? true : false,
