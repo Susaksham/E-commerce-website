@@ -1,6 +1,55 @@
-.wrapper {
+.wrapperWithFilter {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.wrapperWithoutFilter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.sortingContainer {
+  display: flex;
+  gap: 2rem;
+  display: flex;
+  font-size: 2rem;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 3rem;
+}
+.sortCategories {
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+.sortCategories option {
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+.sortByLabel {
+  box-sizing: border-box;
+  padding: 1rem 0rem;
+  border-radius: 10px;
+
+  font-size: 1.8rem;
+  color: rgba(0, 0, 0, 0.623);
+  font-weight: 600;
+}
+.filteredIcon {
+  width: 75%;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+}
+.tileContainer {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(0, 0, 0, 0.224);
+  border-radius: 10px;
 }

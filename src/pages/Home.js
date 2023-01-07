@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux'
 
 function Home() {
   const [displayCart, setDisplayCart] = useState(false)
-
+  const [categories, setCategories] = useState(true)
   const dispatch = useDispatch()
 
   const cartHandler = () => {
@@ -17,14 +17,22 @@ function Home() {
   const removeCartHandler = () => {
     setDisplayCart(false)
   }
+  const categoriesHandler = () => {
+    setCategories((state) => {
+      return !state
+    })
+  }
   useEffect(() => {
     dispatch(products())
   }, [dispatch])
 
   return (
     <div>
-      <NavigationBelt onCartHandler={cartHandler}></NavigationBelt>
-      <Body></Body>
+      <NavigationBelt
+        categoriesHandler={categoriesHandler}
+        onCartHandler={cartHandler}
+      ></NavigationBelt>
+      <Body categories={categories}></Body>
       {displayCart && <Modal removeCart={removeCartHandler}></Modal>}
     </div>
   )

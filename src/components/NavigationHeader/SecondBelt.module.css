@@ -11,4 +11,36 @@
 }
 .wrapper h3 {
   font-size: 2rem;
+  cursor: pointer;
+}
+.active {
+  font-size: 2rem;
+  text-decoration: none;
+  border: none;
+  border-bottom: 5px solid orange;
+
+  font-weight: bold;
+  color: black;
+}
+.unactive {
+  font-size: 2rem;
+  text-decoration: none;
+  border: none;
+  font-weight: bold;
+  color: black;
+}
+.productsActive {
+  font-size: 2rem;
+  text-decoration: none;
+  border: none;
+  border-bottom: 5px solid orange;
+  font-weight: bold;
+  color: black;
+}
+.productsUnactive {
+  font-size: 2rem;
+  text-decoration: none;
+  border: none;
+  font-weight: bold;
+  color: black;
 }

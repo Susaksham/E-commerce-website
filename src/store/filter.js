@@ -135,6 +135,9 @@ const filter = createSlice({
     addData(state, action) {
       state.data = [...action.payload]
     },
+    changeSearchString(state, action) {
+      state.searchString = action.payload
+    },
     change(state, action) {
       const obj = { ...action.payload }
       console.log(obj)

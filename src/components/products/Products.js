@@ -3,57 +3,99 @@ import classes from './Products.module.css'
 import { useSelector } from 'react-redux'
 import Product from './Product'
 import FilteredIcons from './FilteredIcons'
+import { useLocation } from 'react-router-dom'
 
 import Loader from '../../UI/Loader/Loader'
 function Products() {
   let filteredData = []
+  const location = useLocation()
   const data = useSelector((state) => {
     return state.filters.data
   })
+  const productsData = [...data]
   const filters = useSelector((state) => {
     return state.filters.filters
   })
   const totalFilters = useSelector((state) => {
     return state.filters.totalFilters
   })
-
-  if (totalFilters > 0) {
+  const filteredString = useSelector((state) => {
+    return state.filters.searchString
+  })
+  console.log(filteredString)
+  if (totalFilters > 0 || filteredString.length > 0) {
     filteredData = data.filter((element) => {
-      let flag = true
-      for (const filterProperty in element['filters']) {
-        console.log(
-          'matching the filter',
-          element['filters'][filterProperty] !== filters[filterProperty],
-        )
-        console.log(filterProperty)
-        console.log(
-          element['filters'][filterProperty] +
-            ' mathcing or not ' +
-            filters[filterProperty],
-        )
-        if (element['filters'][filterProperty] !== filters[filterProperty]) {
-          flag = false
-          break
+      if (totalFilters > 0 && filteredString.length === 0) {
+        let flag = true
+        for (const filterProperty in element['filters']) {
+          if (element['filters'][filterProperty] !== filters[filterProperty]) {
+            flag = false
+            break
+          }
         }
+        if (!flag) {
+          return false
+        }
+        return true
+      } else if (filteredString.length > 0 && totalFilters === 0) {
+        console.log('nice one')
+        console.log(element)
+        console.log(element.title.includes(`${filteredString}`))
+        return element.title
+          .toLowerCase()
+          .includes(`${filteredString.toLowerCase()}`)
+      } else {
+        if (
+          !element.title
+            .toLowerCase()
+            .includes(`${filteredString.toLowerCase()}`)
+        ) {
+          return false
+        }
+        let flag = true
+        for (const filterProperty in element['filters']) {
+          if (element['filters'][filterProperty] !== filters[filterProperty]) {
+            flag = false
+            break
+          }
+        }
+        if (!flag) {
+          return false
+        }
+        return true
       }
-      if (!flag) {
-        return false
-      }
-      return true
     })
   }
   const loading = useSelector((state) => {
     return state.filters.loading
   })
-  console.log(loading)
-  console.log(data)
+  console.log(location)
+  const search = new URLSearchParams(location.search)
+  console.log(search.get('sort'))
+  if (search.get('sort') === 'increasing') {
+    filteredData.sort((a, b) => {
+      return a.price - b.price
+    })
+    productsData.sort((a, b) => {
+      return a.price - b.price
+    })
+  } else if (search.get('sort') === 'decreasing') {
+    filteredData.sort((a, b) => {
+      return b.price - a.price
+    })
+    productsData.sort((a, b) => {
+      return b.price - a.price
+    })
+  }
   return (
     <div className={classes.wrapper}>
       <FilteredIcons></FilteredIcons>
       <div className={classes.container}>
         {loading && <Loader></Loader>}
-        {totalFilters === 0 &&
-          data.map((product) => {
+        {!loading &&
+          totalFilters === 0 &&
+          filteredString.length === 0 &&
+          productsData.map((product) => {
             console.log(product.star)
             return (
               <Product
@@ -69,7 +111,8 @@ function Products() {
               ></Product>
             )
           })}
-        {totalFilters > 0 &&
+        {!loading &&
+          (totalFilters > 0 || filteredString.length > 0) &&
           filteredData.map((product) => {
             return (
               <Product

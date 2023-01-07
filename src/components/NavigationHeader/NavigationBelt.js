@@ -5,14 +5,21 @@ import Person from '../../UI/Person'
 import SearchIcon from '../../UI/SearchIcon'
 import SecondBelt from './SecondBelt'
 import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import filter, { filterAction } from '../../store/filter'
 function NavigationBelt(props) {
   const cart = useSelector((state) => {
     return state.filters.cart
   })
+  const dispatch = useDispatch()
   const searchRef = useRef('')
   const submitHandler = (e) => {
     e.preventDefault()
     console.log(searchRef.current.value)
+    // dispatch(filterAction.changeSearchString(`${searchRef.current.value}`))
+  }
+  const searchChangeHandler = (e) => {
+    dispatch(filterAction.changeSearchString(`${e.target.value}`))
   }
   const items = cart.reduce((accumadate, current) => {
     accumadate = accumadate + current.items
@@ -30,6 +37,7 @@ function NavigationBelt(props) {
             ref={searchRef}
             type="text"
             placeholder={'Search and hit enter'}
+            onChange={searchChangeHandler}
           ></input>
           <button className={classes.submit} type="submit">
             <SearchIcon color="white" size="24px"></SearchIcon>
@@ -46,7 +54,7 @@ function NavigationBelt(props) {
           </div>
         </div>
       </header>
-      <SecondBelt></SecondBelt>
+      <SecondBelt categoriesHandler={props.categoriesHandler}></SecondBelt>
     </>
   )
 }

@@ -28,7 +28,7 @@ const dataCreator = () => {
           setTimeout(() => {
             dispatch(filterAction.addData(newData))
             res()
-          }, 2000)
+          }, 1000)
         })
         dispatch(filterAction.setLoading(false))
         console.log(data)
