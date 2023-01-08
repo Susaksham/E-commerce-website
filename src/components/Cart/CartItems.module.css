@@ -9,6 +9,7 @@
   justify-content: center;
   gap: 2rem;
   background-color: lightcoral;
+  padding: 2rem;
 }
 .card button {
   padding: 0.5rem 2rem;

@@ -2,6 +2,7 @@ import React from 'react'
 import classes from './Product.module.css'
 import { useDispatch } from 'react-redux'
 import { filterAction } from '../../store/filter'
+import { Link } from 'react-router-dom'
 function Product(props) {
   const dispatch = useDispatch()
   const addItemHandler = () => {
@@ -16,15 +17,17 @@ function Product(props) {
   }
   return (
     <div className={classes.wrapper}>
-      <div className={classes.image}>
-        <img
-          src={props.image}
-          className={classes.image}
-          alt={props.productName}
-        ></img>
-      </div>
-      <h3>${props.price}</h3>
-      <p>{props.productName.substring(0, 50)}</p>
+      <Link className={classes.linkStyling} to={`/${props.id}`}>
+        <div className={classes.image}>
+          <img
+            src={props.image}
+            className={classes.image}
+            alt={props.productName}
+          ></img>
+        </div>
+        <h3>${props.price}</h3>
+        <p>{props.productName.substring(0, 50)}</p>
+      </Link>
 
       <div className={classes.bottom}>
         <div className={classes.star}>

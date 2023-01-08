@@ -1,3 +1,7 @@
+.linkStyling {
+  text-decoration: none;
+  color: black;
+}
 .wrapper {
   width: 24rem;
   height: 35rem;

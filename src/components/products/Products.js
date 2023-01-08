@@ -2,7 +2,7 @@ import React from 'react'
 import classes from './Products.module.css'
 import { useSelector } from 'react-redux'
 import Product from './Product'
-import FilteredIcons from './FilteredIcons'
+import FilteredIcons from '../FilterIcons/FilteredIcons'
 import { useLocation } from 'react-router-dom'
 
 import Loader from '../../UI/Loader/Loader'
