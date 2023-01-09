@@ -4,4 +4,5 @@
   border: 2px solid white;
   position: relative;
   border-radius: 10px;
+  overflow: hidden;
 }

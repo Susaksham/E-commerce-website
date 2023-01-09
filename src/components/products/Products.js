@@ -22,7 +22,7 @@ function Products() {
   const filteredString = useSelector((state) => {
     return state.filters.searchString
   })
-  console.log(filteredString)
+
   if (totalFilters > 0 || filteredString.length > 0) {
     filteredData = data.filter((element) => {
       if (totalFilters > 0 && filteredString.length === 0) {
@@ -38,9 +38,6 @@ function Products() {
         }
         return true
       } else if (filteredString.length > 0 && totalFilters === 0) {
-        console.log('nice one')
-        console.log(element)
-        console.log(element.title.includes(`${filteredString}`))
         return element.title
           .toLowerCase()
           .includes(`${filteredString.toLowerCase()}`)
@@ -69,9 +66,9 @@ function Products() {
   const loading = useSelector((state) => {
     return state.filters.loading
   })
-  console.log(location)
+
   const search = new URLSearchParams(location.search)
-  console.log(search.get('sort'))
+
   if (search.get('sort') === 'increasing') {
     filteredData.sort((a, b) => {
       return a.price - b.price

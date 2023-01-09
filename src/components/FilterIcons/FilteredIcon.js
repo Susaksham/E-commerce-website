@@ -5,7 +5,6 @@ import { filterAction } from '../../store/filter'
 function FilteredIcon(props) {
   const dispatch = useDispatch()
   const removeHandler = () => {
-    console.log(props.filteredIconName)
     dispatch(filterAction.change({ type: `${props.filteredIconName}` }))
     dispatch(filterAction.remove({ type: `${props.filteredIconName}` }))
   }

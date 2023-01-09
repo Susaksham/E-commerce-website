@@ -46,7 +46,7 @@ function NavigationBelt(props) {
         </form>
         <div className={classes.icons_container}>
           <div className={classes.cart}>
-            <Person></Person>
+            <Person onClick={props.authHandler}></Person>
           </div>
           <div className={classes.cart}>
             <CartIcon onClick={props.onCartHandler}></CartIcon>

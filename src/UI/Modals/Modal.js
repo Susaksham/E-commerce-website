@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom'
-import CartItems from '../components/Cart/CartItems'
+import CartItems from '../../components/Cart/CartItems'
 import classes from './Modal.module.css'
-import Card from './Card'
+import Card from '../Card'
 function Modal(props) {
   return (
     <>

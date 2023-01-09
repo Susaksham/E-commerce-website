@@ -4,11 +4,9 @@ function Button(props) {
   const onclickhandler = () => {
     props.onClick()
   }
+  const additonalClasses = ` ${classes.button} ${classes.accept_btn} ${props.className}`
   return (
-    <button
-      class={`${classes.button} ${classes.accept_btn}`}
-      onClick={onclickhandler}
-    >
+    <button className={additonalClasses} onClick={onclickhandler}>
       {props.text}
     </button>
   )

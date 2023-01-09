@@ -19,7 +19,7 @@ function FilteredIcons() {
       return !state
     })
   }
-  console.log(filteredIcons)
+
   return (
     <div
       className={

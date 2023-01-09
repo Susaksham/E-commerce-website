@@ -1,8 +1,9 @@
 import React from 'react'
 
-function Person() {
+function Person(props) {
   return (
     <svg
+      onClick={props.onClick}
       xmlns="http://www.w3.org/2000/svg"
       width="25"
       height="25"

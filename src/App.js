@@ -6,8 +6,12 @@ import Home from './pages/Home'
 import { Provider } from 'react-redux'
 import store from './store/renders'
 import ProductDetail from './components/products/ProductDetail'
+import { useContext } from 'react'
+import { authContext } from './store/auth-context'
 
 function App() {
+  const authCtx = useContext(authContext)
+
   return (
     <>
       <Provider store={store}>
