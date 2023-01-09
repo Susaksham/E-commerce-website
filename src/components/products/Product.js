@@ -12,6 +12,7 @@ function Product(props) {
         title: props.productName,
         price: props.price,
         description: props.description,
+        image: props.image,
       }),
     )
   }

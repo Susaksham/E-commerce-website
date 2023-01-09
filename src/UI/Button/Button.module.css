@@ -1,0 +1,62 @@
+.tester {
+  animation: slideMe 1s ease-in;
+}
+
+.tester2 {
+  animation: slideMeOut 1s ease-in;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 1s linear;
+}
+
+@keyframes slideMe {
+  0% {
+    transform: skewX(53deg) translateX(500px);
+  }
+  100% {
+    transform: skew(0deg);
+  }
+}
+
+@keyframes slideMeOut {
+  0% {
+    transform: skewX(-53deg) translateX(-500px);
+  }
+  100% {
+    transform: skew(0deg);
+  }
+}
+
+.button {
+  font-family: 'Roboto', sans-serif;
+
+  text-transform: uppercase;
+
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  font-size: 1.6rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.button.cancel_btn:hover {
+  background-color: #f3270b;
+  box-shadow: 0px 15px 20px rgba(243, 42, 11, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.button.accept_btn:hover {
+  background-color: #0b91f3;
+  box-shadow: 0px 15px 20px rgba(11, 113, 243, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}

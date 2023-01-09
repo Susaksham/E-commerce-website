@@ -19,11 +19,20 @@ function CartItem(props) {
   }
   return (
     <div className={classes.wrapper}>
-      <p>{props.productName}</p>
-      <p>{props.price}</p>
-      <p>{props.items}</p>
-      <button onClick={addItemHandler}>+</button>
-      <button onClick={removeItemHandler}>-</button>
+      <div className={classes.image}>
+        <img src={`${props.imageUrl}`} alt=" not available"></img>
+      </div>
+      <div className={classes.detail}>
+        <p>{props.productName}</p>
+        <div className={classes.buttons}>
+          <button onClick={removeItemHandler}>-</button>
+          <p>{props.items}</p>
+          <button onClick={addItemHandler}>+</button>
+        </div>
+      </div>
+      <div className={classes.price}>
+        <p>{props.price}</p>
+      </div>
     </div>
   )
 }

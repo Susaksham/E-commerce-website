@@ -6,12 +6,50 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 2rem;
-  background-color: lightcoral;
-  padding: 2rem;
+  background-color: rgba(255, 255, 0, 0.507);
+  padding: 2rem 4rem;
+  overflow: hidden;
 }
 .card button {
   padding: 0.5rem 2rem;
   font-size: 2rem;
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.heading {
+  width: 100%;
+  text-align: left;
+  font-size: 3rem;
+}
+.items {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  flex-direction: column;
+  overflow-y: auto;
+  padding-right: 2rem;
+}
+.items::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+.items::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+}
+
+.items::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: orange;
 }
