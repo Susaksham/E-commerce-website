@@ -24,9 +24,9 @@ export function BackDrop1(props) {
       <div className={classes1.firstChild} onClick={props.removeAuth}></div>
       <Card className={classes.card}>
         {authCtx.idToken.length === 0 ? (
-          <LogIn></LogIn>
+          <LogIn removeAuth={props.removeAuth}></LogIn>
         ) : (
-          <ResetPassword></ResetPassword>
+          <ResetPassword removeAuth={props.removeAuth}></ResetPassword>
         )}
       </Card>
     </div>

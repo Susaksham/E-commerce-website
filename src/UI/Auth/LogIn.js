@@ -3,7 +3,7 @@ import Button from '../Button/Button'
 import classes from './LogIn.module.css'
 import { useRef, useContext, useState } from 'react'
 import { authContext } from '../../store/auth-context'
-function LogIn() {
+function LogIn(props) {
   const userNameRef = useRef('')
   const emailRef = useRef('')
   const passwordRef = useRef('')
@@ -55,7 +55,7 @@ function LogIn() {
         }
         emailRef.current.value = ''
         passwordRef.current.value = ''
-
+        props.removeAuth()
         setIsLoggedIn(false)
       } catch (err) {
         alert(err)

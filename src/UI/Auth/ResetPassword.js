@@ -3,7 +3,7 @@ import classes from './ResetPassword.module.css'
 import { useRef, useContext, useState } from 'react'
 import { authContext } from '../../store/auth-context'
 import Button from '../Button/Button'
-function ResetPassword() {
+function ResetPassword(props) {
   const userNameRef = useRef('')
   const emailRef = useRef('')
   const passwordRef = useRef('')
@@ -21,6 +21,9 @@ function ResetPassword() {
       setSuccessful(true)
       setTimeout(() => {
         setSuccessful(false)
+        setTimeout(() => {
+          props.removeAuth()
+        }, 0)
       }, 2000)
     })
   }
