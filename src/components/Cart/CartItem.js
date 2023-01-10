@@ -31,7 +31,7 @@ function CartItem(props) {
         </div>
       </div>
       <div className={classes.price}>
-        <p>{props.price}</p>
+        <p>${props.price}</p>
       </div>
     </div>
   )

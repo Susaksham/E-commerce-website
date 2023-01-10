@@ -7,6 +7,7 @@ function LogIn() {
   const userNameRef = useRef('')
   const emailRef = useRef('')
   const passwordRef = useRef('')
+
   const ctxAuth = useContext(authContext)
   const [modeSwitcher, setModeSwitcher] = useState(false)
   const [isLoggingIn, setIsLoggedIn] = useState(false)
@@ -18,12 +19,13 @@ function LogIn() {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    const userName = userNameRef.current.value
+    const userName = modeSwitcher ? userNameRef.current.value : ''
     const email = emailRef.current.value
     const password = passwordRef.current.value
     setIsLoggedIn(true)
-    const url =
-      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCISzuKsXcAjQK9zglA1jeIPBRvC0TYWi8'
+    const url = modeSwitcher
+      ? 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCISzuKsXcAjQK9zglA1jeIPBRvC0TYWi8'
+      : 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCISzuKsXcAjQK9zglA1jeIPBRvC0TYWi8'
     const loginAuth = async () => {
       try {
         const response = await fetch(url, {
@@ -38,14 +40,26 @@ function LogIn() {
             // 'Content-Type': 'application/x-www-form-urlencoded',
           },
         })
+        if (!response.ok) {
+          const data = await response.json()
+          console.log(data)
+          throw new Error(data.error.message)
+        }
 
         const data = await response.json()
+
         ctxAuth.loginHandler(data)
-        console.log(data)
+
+        if (modeSwitcher) {
+          userNameRef.current.value = ''
+        }
+        emailRef.current.value = ''
+        passwordRef.current.value = ''
+
         setIsLoggedIn(false)
       } catch (err) {
-        alert('hello')
-        console.log(err)
+        alert(err)
+        passwordRef.current.value = ''
         setIsLoggedIn(false)
       }
     }
@@ -57,13 +71,24 @@ function LogIn() {
         <h1>{modeSwitcher ? 'SignUp' : 'Login'}</h1>
         <form className={classes.form} onSubmit={submitHandler}>
           {modeSwitcher && (
-            <input type="text" placeholder="UserName" ref={userNameRef}></input>
+            <input
+              type="text"
+              placeholder="UserName"
+              ref={userNameRef}
+              defaultValue={userNameRef.current.value}
+            ></input>
           )}
-          <input type="email" placeholder="Email id" ref={emailRef}></input>
+          <input
+            type="email"
+            placeholder="Email id"
+            ref={emailRef}
+            defaultValue={emailRef.current.value}
+          ></input>
           <input
             type="password"
             placeholder="Password"
             ref={passwordRef}
+            defaultValue={passwordRef.current}
           ></input>
           {isLoggingIn ? (
             <p>Loading...</p>

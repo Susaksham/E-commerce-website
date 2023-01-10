@@ -6,8 +6,9 @@ import Body from '../components/Body/Body'
 export const authContext = createContext({
   idToken: '',
   isLoggedIn: false,
-  logOut: () => {},
-  logIn: () => {},
+  logOutHandler: () => {},
+  loginHandler: () => {},
+  changePassword: () => {},
 })
 
 const AuthContextProvider = (props) => {
@@ -15,18 +16,24 @@ const AuthContextProvider = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   const loginHandler = (token) => {
-    setIdToken(token)
+    setIdToken(token.idToken)
+
     setIsLoggedIn(true)
   }
   const logOutHandler = () => {
     setIdToken('')
     setIsLoggedIn(false)
   }
+  const changePassword = (data) => {
+    const idToken = data.idToken
+    setIdToken(idToken)
+  }
   const store = {
     idToken,
     isLoggedIn,
     loginHandler,
     logOutHandler,
+    changePassword,
   }
 
   return (

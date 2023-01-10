@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import classes1 from './Modal.module.css'
 import Card from '../Card'
 import LogIn from '../Auth/LogIn'
 import ReactDOM from 'react-dom'
 import classes from './AuthModal.module.css'
+import ResetPassword from '../Auth/ResetPassword'
+import { authContext } from '../../store/auth-context'
 function AuthModal(props) {
   return (
     <>
@@ -16,11 +18,16 @@ function AuthModal(props) {
 }
 
 export function BackDrop1(props) {
+  const authCtx = useContext(authContext)
   return (
     <div className={classes1.backdrop}>
       <div className={classes1.firstChild} onClick={props.removeAuth}></div>
       <Card className={classes.card}>
-        <LogIn></LogIn>
+        {authCtx.idToken.length === 0 ? (
+          <LogIn></LogIn>
+        ) : (
+          <ResetPassword></ResetPassword>
+        )}
       </Card>
     </div>
   )

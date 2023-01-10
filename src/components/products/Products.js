@@ -93,7 +93,6 @@ function Products() {
           totalFilters === 0 &&
           filteredString.length === 0 &&
           productsData.map((product) => {
-            console.log(product.star)
             return (
               <Product
                 key={product.id}

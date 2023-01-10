@@ -70,3 +70,10 @@
   background-color: orange;
   right: 0;
 }
+.profile {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  object-fit: cover;
+  border: 2px solid orange;
+}

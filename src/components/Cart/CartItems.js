@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Card from '../../UI/Card'
 import CartItem from './CartItem'
 import classes from './CartItems.module.css'
 import Button from '../../UI/Button/Button'
+import { authContext } from '../../store/auth-context'
 function CartItems(props) {
   const cartItems = useSelector((state) => {
     return state.filters.cart
   })
+  const authCtx = useContext(authContext)
   const orderingHandler = () => {
+    if (authCtx.idToken.length === 0) {
+      removeCartHandler()
+    }
     console.log(cartItems)
   }
   const removeCartHandler = () => {
@@ -25,7 +30,6 @@ function CartItems(props) {
       <h1 className={classes.heading}>Checkout Goods {items}</h1>
       <div className={classes.items}>
         {cartItems.map((element) => {
-          console.log(element.image)
           return (
             <CartItem
               id={element.id}
