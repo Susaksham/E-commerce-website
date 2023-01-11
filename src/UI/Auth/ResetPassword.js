@@ -56,7 +56,7 @@ function ResetPassword(props) {
           throw new Error(response)
         }
         const data = await response.json()
-        console.log(data)
+        // console.log(data)
         ctxAuth.changePassword(data)
         passwordRef.current.value = ''
         await successfulHandler()
@@ -87,7 +87,7 @@ function ResetPassword(props) {
           )}
 
           <Button
-            text={signOut ? 'SignOut' : 'Change Password'}
+            text={signOut ? 'Logout' : 'Change Password'}
             className={classes.button}
             onClick={() => {}}
           ></Button>
