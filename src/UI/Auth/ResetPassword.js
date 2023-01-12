@@ -63,7 +63,7 @@ function ResetPassword(props) {
       } catch (err) {
         alert(err)
         passwordRef.current.value = ''
-        console.log(err)
+        // console.log(err)
       }
     }
     getOtp()
