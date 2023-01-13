@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Nunito+Sans&family=Open+Sans&family=Pacifico&display=swap');
+
 .header {
   display: flex;
   align-items: center;
@@ -8,6 +10,11 @@
 }
 .header h1 {
   font-size: 2.4rem;
+
+  font-family: 'Pacifico', cursive;
+}
+.icon {
+  font-size: 4rem;
 }
 .search {
   display: flex;
@@ -76,4 +83,21 @@
   border-radius: 100%;
   object-fit: cover;
   border: 2px solid orange;
+}
+.hamburger {
+  display: none;
+}
+@media (max-width: 394px) {
+  * {
+    font-size: 50%;
+  }
+  .search {
+    display: none;
+  }
+  .icons_container {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
 }

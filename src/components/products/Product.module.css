@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Poppins&family=Roboto&display=swap');
 .linkStyling {
   text-decoration: none;
   color: black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 85%;
+  justify-content: space-between;
 }
 .wrapper {
+  font-family: 'Poppins', sans-serif;
   width: 24rem;
   height: 35rem;
   border-radius: 10px;
@@ -19,18 +26,23 @@
   width: 20rem;
   height: 15rem;
   object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .wrapper h3 {
   font-size: 2rem;
   display: block;
   width: 100%;
   padding-left: 2rem;
+  font-family: 'Poppins', sans-serif;
 }
 .wrapper p {
   font-size: 1.6rem;
   display: block;
   width: 100%;
-  padding-left: 2rem;
+  padding-left: 0.1rem;
+  font-family: 'Roboto', sans-serif;
 }
 .bottom {
   display: flex;

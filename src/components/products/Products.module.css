@@ -25,3 +25,8 @@
   padding: 2rem;
   padding-right: 1rem;
 }
+@media (max-width: 394px) {
+  * {
+    font-size: 50%;
+  }
+}

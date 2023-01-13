@@ -10,6 +10,7 @@
 }
 .product__types label {
   font-size: 1.6rem;
+  font-family: 'Poppins', sans-serif;
 }
 .product__types input[type='checkbox'] {
   border: 2px #fb6a00 solid;
