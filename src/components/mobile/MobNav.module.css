@@ -1,8 +1,45 @@
+.parentContainer {
+  bottom: 15%;
+  width: 100%;
+}
+/* .arrowCotainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 2rem;
+} */
+
+.arrow {
+  position: fixed;
+  background-color: rgb(255, 85, 0);
+  width: fit-content;
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  bottom: 2rem;
+  right: 2rem;
+}
+.arrowCotainerUnActive {
+  bottom: 12rem;
+  /* right: 2rem; */
+}
+.arrowIcon {
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.arrowRotate {
+  transition: all 0.5s;
+  transform: rotate(180deg);
+}
 .container {
   position: fixed;
   bottom: 0%;
-  background-color: white;
-  padding: 8rem 0rem 0rem;
+  width: 100%;
+  background-color: transparent;
+  padding: 2rem 0rem 0rem;
   width: 100%;
   /* background-color: #333; */
 }
@@ -72,4 +109,9 @@
 .person {
   font-size: 3rem;
   color: white;
+}
+.active {
+  transition: all 1s;
+  /* position: absolute; */
+  bottom: -100% !important;
 }

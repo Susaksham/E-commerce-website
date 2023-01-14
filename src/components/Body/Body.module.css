@@ -8,3 +8,11 @@
   padding-top: 2.4rem;
   overflow: hidden !important;
 }
+@media (max-width: 550px) {
+  .wrapper {
+    position: relative;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0rem;
+  }
+}

@@ -67,7 +67,9 @@ function NavigationBelt(props) {
           </div>
         </div>
       </header>
-      <SecondBelt categoriesHandler={props.categoriesHandler}></SecondBelt>
+      {props.viewChecker > 550 && (
+        <SecondBelt categoriesHandler={props.categoriesHandler}></SecondBelt>
+      )}
     </>
   )
 }

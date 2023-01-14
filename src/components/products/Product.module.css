@@ -73,3 +73,9 @@
   border-radius: 50%;
   background-color: #fb6a00;
 }
+@media (max-width: 550px) {
+  .wrapper {
+    width: 90%;
+    height: 80%;
+  }
+}

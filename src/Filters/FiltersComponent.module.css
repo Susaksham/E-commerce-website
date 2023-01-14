@@ -27,3 +27,11 @@
   font-size: 2.2rem;
   font-family: 'Poppins', sans-serif;
 }
+@media (max-width: 550px) {
+  .container {
+    position: absolute;
+    left: -100vw;
+    transform: translateX(100vw);
+    transition: all 1s;
+  }
+}

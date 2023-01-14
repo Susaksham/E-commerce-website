@@ -91,6 +91,9 @@
   * {
     font-size: 50%;
   }
+  .header {
+    border: none;
+  }
   .search {
     display: none;
   }

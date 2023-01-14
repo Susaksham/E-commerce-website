@@ -7,8 +7,17 @@ import products from '../store/products'
 import { useDispatch } from 'react-redux'
 import AuthModal from '../UI/Modals/AuthModal'
 import MobNav from '../components/mobile/MobNav'
+import useDynamicScreen from '../hooks/dynamicScreen'
 
 function Home() {
+  // const [view, setView] = useState(window.innerWidth <= 550)
+  const [slideBar, setSlideBar] = useState(true)
+  const slideNavBar = () => {
+    setSlideBar((slideBar) => {
+      return !slideBar
+    })
+  }
+  const { viewChecker } = useDynamicScreen()
   const [displayCart, setDisplayCart] = useState(false)
   const [categories, setCategories] = useState(true)
   const [displayAuth, setDisplayAuth] = useState(false)
@@ -40,11 +49,18 @@ function Home() {
         categoriesHandler={categoriesHandler}
         onCartHandler={cartHandler}
         authHandler={authHandler}
+        viewChecker={viewChecker}
       ></NavigationBelt>
       <Body categories={categories}></Body>
       {displayCart && <Modal removeCart={removeCartHandler}></Modal>}
       {displayAuth && <AuthModal removeAuth={authHandler}></AuthModal>}
-      <MobNav></MobNav>
+      {viewChecker < 550 && (
+        <MobNav
+          slideBar={slideBar}
+          slideNavBar={slideNavBar}
+          categoriesHandler={categoriesHandler}
+        ></MobNav>
+      )}
     </div>
   )
 }
