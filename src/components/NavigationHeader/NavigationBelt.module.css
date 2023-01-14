@@ -87,7 +87,7 @@
 .hamburger {
   display: none;
 }
-@media (max-width: 394px) {
+@media (max-width: 550px) {
   * {
     font-size: 50%;
   }
