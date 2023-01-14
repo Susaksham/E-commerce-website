@@ -6,6 +6,7 @@ import Modal from '../UI/Modals/Modal'
 import products from '../store/products'
 import { useDispatch } from 'react-redux'
 import AuthModal from '../UI/Modals/AuthModal'
+import MobNav from '../components/mobile/MobNav'
 
 function Home() {
   const [displayCart, setDisplayCart] = useState(false)
@@ -43,6 +44,7 @@ function Home() {
       <Body categories={categories}></Body>
       {displayCart && <Modal removeCart={removeCartHandler}></Modal>}
       {displayAuth && <AuthModal removeAuth={authHandler}></AuthModal>}
+      <MobNav></MobNav>
     </div>
   )
 }

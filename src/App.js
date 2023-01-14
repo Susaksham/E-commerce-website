@@ -8,17 +8,18 @@ import store from './store/renders'
 import ProductDetail from './components/products/ProductDetail'
 import { useContext } from 'react'
 import { authContext } from './store/auth-context'
-import classes from './App.css'
+import './App.css'
 import MobNav from './components/mobile/MobNav'
+import Home from './pages/Home'
 function App() {
   const authCtx = useContext(authContext)
 
   return (
-    <div className={classes.wrapper}>
+    <div className="wrapper">
       <Provider store={store}>
         <Routes>
           <Route path="/">
-            <Route index element={<MobNav></MobNav>}></Route>
+            <Route index element={<Home></Home>}></Route>
             <Route path="home" element={<h1>hello bro </h1>}></Route>
             <Route
               path="products"

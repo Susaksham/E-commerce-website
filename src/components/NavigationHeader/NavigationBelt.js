@@ -66,17 +66,6 @@ function NavigationBelt(props) {
             <span className={classes.cartItems}>{items}</span>
           </div>
         </div>
-        <div className={classes.hamburger}>
-          <svg
-            style={{ width: '4.5rem', height: '4.5rem' }}
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="currentColor"
-              d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"
-            />
-          </svg>
-        </div>
       </header>
       <SecondBelt categoriesHandler={props.categoriesHandler}></SecondBelt>
     </>

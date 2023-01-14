@@ -1,3 +1,75 @@
-.navBar {
+.container {
   position: fixed;
+  bottom: 0%;
+  background-color: white;
+  padding: 8rem 0rem 0rem;
+  width: 100%;
+  /* background-color: #333; */
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  /* height: 100%; */
+  /* border: 2px solid black; */
+  padding: 0rem 0rem 2rem 0rem;
+  height: 10rem;
+  border-top-left-radius: 5rem;
+  border-top-right-radius: 5rem;
+  /* box-shadow: 2px -2px 50px 1px black; */
+  background-color: #333;
+
+  box-shadow: 0px 2px 2px 2px black;
+  /* clip-path: polygon(
+    0% 0%,
+    30% 0%,
+    30% 30%,
+    60% 30%,
+    60% 0%,
+    100% 0%,
+    100% 100%,
+    0% 100%
+  ); */
+}
+
+.homeIcon {
+  font-size: 3rem;
+  color: white;
+}
+.shoppingBagAround {
+  position: relative;
+  bottom: 3rem;
+  border: 1.5rem solid white;
+  border-radius: 100%;
+  background-color: white;
+}
+.shoppingBagContainer {
+  border-radius: 100%;
+
+  z-index: 50;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255, 85, 0);
+  border-radius: 100%;
+  padding: 2rem 2.5rem;
+  box-shadow: 2px 2px 100px 2px rgb(222, 58, 8);
+}
+.shoppingBag {
+  font-size: 3rem;
+  color: white;
+}
+.searchIcon {
+  font-size: 3rem;
+  color: white;
+}
+.categories {
+  font-size: 3rem;
+  color: white;
+}
+.person {
+  font-size: 3rem;
+  color: white;
 }
