@@ -26,9 +26,9 @@
   padding-right: 1rem;
 }
 @media (max-width: 550px) {
-  /* * {
-    font-size: 70%;
-  } */
+  * {
+    font-size: 62.5%;
+  }
   .wrapper {
     border: none;
   }
