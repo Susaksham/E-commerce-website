@@ -27,7 +27,7 @@
 }
 @media (max-width: 550px) {
   * {
-    font-size: 40.5%;
+    font-size: 50%;
   }
   .wrapper {
     border: none;
