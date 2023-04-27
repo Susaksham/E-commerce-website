@@ -5,13 +5,13 @@
   align-items: center;
   justify-content: center;
   gap: 4rem;
-  background-color: orange;
+  background-color: white;
   border-radius: 10px;
   padding: 2rem 2rem;
 }
 .wrapper p {
   font-size: 1.6rem;
-  color: white;
+  color: #000000;
 }
 .wrapper button {
   padding: 0.5rem 2rem;

@@ -1,13 +1,22 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import classes from './SecondBelt.module.css'
+import React from "react";
+import { NavLink } from "react-router-dom";
+import classes from "./SecondBelt.module.css";
 function SecondBelt(props) {
   return (
-    <div className={classes.wrapper}>
-      <div style={{ display: 'flex', gap: '1.12rem', alignItems: 'center' }}>
+    <div
+      className={classes.wrapper}
+      style={{ backgroundColor: `${props.fixed ? "#ff523b" : "white"}` }}
+    >
+      <div
+        style={{
+          display: "flex",
+          gap: "1.12rem",
+          alignItems: "center",
+        }}
+      >
         <svg
           onClick={props.categoriesHandler}
-          style={{ width: '24px', height: '24px' }}
+          style={{ width: "24px", height: "24px" }}
           viewBox="0 0 24 24"
         >
           <path
@@ -35,10 +44,17 @@ function SecondBelt(props) {
         >
           Products
         </NavLink>
-        <h3>Contact Us</h3>
+        <NavLink
+          to="/contact"
+          className={(navData) =>
+            navData.isActive ? classes.productsActive : classes.productsUnactive
+          }
+        >
+          Contact Us
+        </NavLink>
       </div>
     </div>
-  )
+  );
 }
 
-export default SecondBelt
+export default SecondBelt;

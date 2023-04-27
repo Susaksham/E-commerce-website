@@ -1,15 +1,13 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useState } from "react";
+import Contacts from "../components/Contact/Contacts";
 import NavigationBelt from "../components/NavigationHeader/NavigationBelt";
-import FiltersComponent from "../Filters/FiltersComponent";
-import Body from "../components/Body/Body";
+import useDynamicScreen from "../hooks/dynamicScreen";
 import Modal from "../UI/Modals/Modal";
-import products from "../store/products";
-import { useDispatch } from "react-redux";
 import AuthModal from "../UI/Modals/AuthModal";
 import MobNav from "../components/mobile/MobNav";
-import useDynamicScreen from "../hooks/dynamicScreen";
-
-function Home({
+import { useDispatch } from "react-redux";
+import products from "../store/products";
+const Contact = ({
   categories,
   removeCartHandler,
   categoriesHandler,
@@ -19,18 +17,10 @@ function Home({
   displayCart,
   slideBar,
   slideNavBar,
-}) {
-  // const [view, setView] = useState(window.innerWidth <= 550)
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(products());
-  }, [dispatch]);
-
+}) => {
   return (
-    <div>
-      <Body categories={categories}></Body>
+    <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
+      <Contacts></Contacts>{" "}
       {displayCart && <Modal removeCart={removeCartHandler}></Modal>}
       {displayAuth && <AuthModal removeAuth={authHandler}></AuthModal>}
       {viewChecker < 550 && (
@@ -42,6 +32,6 @@ function Home({
       )}
     </div>
   );
-}
+};
 
-export default Home;
+export default Contact;

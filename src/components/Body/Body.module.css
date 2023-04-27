@@ -3,10 +3,10 @@
   display: flex;
   gap: 4.8rem;
   justify-content: center;
-  padding-left: 3.8rem;
+  /* padding-left: 3.8rem; */
   padding-right: 4.8rem;
   padding-top: 2.4rem;
-  overflow: hidden !important;
+  /* overflow: hidden !important; */
 }
 @media (max-width: 550px) {
   .wrapper {

@@ -1,13 +1,13 @@
-import React from 'react'
-import classes from './MinOrder.module.css'
-import { useState } from 'react'
+import React from "react";
+import classes from "./MinOrder.module.css";
+import { useState } from "react";
 function MinOrder() {
   const [price, setPrice] = useState(() => {
-    return 300
-  })
+    return 300;
+  });
   const priceChangeHandler = (e) => {
-    setPrice(e.target.value)
-  }
+    setPrice(e.target.value);
+  };
   return (
     <div className={classes.minOrder}>
       <h2>Min Order</h2>
@@ -16,15 +16,15 @@ function MinOrder() {
           type="range"
           min="0"
           max="1000"
-          style={{ width: '198px' }}
+          style={{ width: "19.8rem", color: "green" }}
           onChange={priceChangeHandler}
         ></input>
         <div
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            width: '198px',
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            width: "19.8rem",
           }}
         >
           <span>0</span>
@@ -33,7 +33,7 @@ function MinOrder() {
         </div>
       </form>
     </div>
-  )
+  );
 }
 
-export default MinOrder
+export default MinOrder;

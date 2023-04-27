@@ -28,7 +28,7 @@
 }
 
 .button {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 
   text-transform: uppercase;
 
@@ -55,8 +55,8 @@
 }
 
 .button.accept_btn:hover {
-  background-color: #0b91f3;
-  box-shadow: 0px 15px 20px rgba(11, 113, 243, 0.4);
+  background-color: #ffa500;
+  box-shadow: 0px 15px 20px rgba(42, 42, 43, 0.4);
   color: #fff;
   transform: translateY(-7px);
 }
