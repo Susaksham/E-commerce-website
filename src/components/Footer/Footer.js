@@ -108,7 +108,7 @@ const Footer = () => {
                 <div style={{ display: "flex", gap: "2rem" }}>
                   {socialLinks.map((element) => {
                     return (
-                      <a href={element.link} target="_blank">
+                      <a href={element.link} key={element.id} target="_blank">
                         <span
                           style={{
                             borderRadius: "100%",
