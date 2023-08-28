@@ -15,6 +15,7 @@ function LogIn(props) {
     setModeSwitcher((state) => {
       return !state;
     });
+    userNameRef.current = null;
   };
 
   const submitHandler = (e) => {
@@ -59,7 +60,7 @@ function LogIn(props) {
         setIsLoggedIn(false);
       } catch (err) {
         alert(err);
-        if (userNameRef) {
+        if (userNameRef.current) {
           userNameRef.current.value = "";
         }
         emailRef.current.value = "";
